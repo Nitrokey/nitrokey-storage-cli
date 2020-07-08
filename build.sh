@@ -28,9 +28,14 @@ make install DESTDIR=`pwd`/foo
 
 
 
-
+cd
+git clone https://github.com/daringer/nkstorecli.git
+cd nkstorecli/src
+cp -r /root/libnitrokey/build/foo/usr/include/libnitrokey/ .
 cp /root/libusb-1.0.23/foo/usr/lib/libusb-1.0.a .
 cp /root/hidapi/foo/usr/lib/libhidapi-libusb.a .
 cp /root/libnitrokey/build/foo/usr/lib/libnitrokey.a .
+
+make
 
 
