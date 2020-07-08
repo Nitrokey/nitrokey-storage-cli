@@ -1,0 +1,9 @@
+language: generic
+
+# command to install dependencies
+#install:
+#  - make image
+
+# command to run tests
+script:
+  - make

@@ -7,9 +7,4 @@ WORKDIR /root
 
 ADD build.sh /root/build.sh
 
-RUN /bin/bash /root/build.sh
-
-CMD /bin/bash
-
-
-
+CMD /bin/bash /root/build.sh
