@@ -6,7 +6,7 @@ image:
 
 build: image
 	docker rm nkstorecli || true
-	docker run --name nkstorecli nitrokey/nkstorecli 
+	docker run --name nkstorecli nitrokey/nkstorecli:latest 
 	docker cp nkstorecli:/root/nkstorecli/src/nkstorecli .
 	docker stop nkstorecli
 
