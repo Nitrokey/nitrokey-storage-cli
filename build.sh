@@ -5,7 +5,7 @@ wget https://github.com/libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.ta
 tar xf libusb-1.0.23.tar.bz2
 cd libusb-1.0.23
 ./configure --prefix=/usr --disable-shared --disable-udev
-make
+make -j6
 make install DESTDIR=`pwd`/foo
 
 cd
@@ -14,7 +14,7 @@ cd hidapi
 export libudev_CFLAGS=-I/usr/include
 ./bootstrap
 ./configure --prefix=/usr --disable-shared
-make
+make -j6 
 make install DESTDIR=`pwd`/foo
 
 cd
@@ -23,7 +23,7 @@ cd libnitrokey
 mkdir build
 cd build
 cmake ..  -DBUILD_SHARED_LIBS=OFF -DCOMPILE_TESTS=OFF -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib
-make
+make -j6
 make install DESTDIR=`pwd`/foo 
 
 
