@@ -26,6 +26,6 @@ release:
 	cp VERSION $(RELEASEDIR)
 
 	tar czf $(RELEASEDIR).tar.gz $(RELEASEDIR)
-	sha256sum $(RELEASEDIR).tar.gz.sha256
+	sha256sum $(RELEASEDIR).tar.gz > $(RELEASEDIR).tar.gz.sha256
 	
 	stat $(RELEASEDIR).tar.gz $(RELEASEDIR).tar.gz.sha256
