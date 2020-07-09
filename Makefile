@@ -12,6 +12,6 @@ build: image
 
 	
 tests: build
-	./nkstorecli
+	stat nkstorecli
 
 

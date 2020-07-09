@@ -1,5 +1,8 @@
 language: generic
 
+services:
+  - docker
+
 # command to install dependencies
 #install:
 #  - make image
