@@ -20,8 +20,8 @@ tests: nkstorecli
 
 release: 
 	mkdir -p $(RELEASEDIR)
-	#cp nkstorecli $(RELEASEDIR)/nkstorecli.upx
-	#upx $(RELEASEDIR)/nkstorecli.upx
+	cp nkstorecli $(RELEASEDIR)/nkstorecli.upx
+	upx $(RELEASEDIR)/nkstorecli.upx
 	cp nkstorecli $(RELEASEDIR)/nkstorecli
 	cp VERSION $(RELEASEDIR)
 
@@ -29,8 +29,3 @@ release:
 	sha256sum $(RELEASEDIR).tar.gz.sha256
 	
 	stat $(RELEASEDIR).tar.gz $(RELEASEDIR).tar.gz.sha256
-	
-	echo $(VERSION)
-	echo $(VERSION)
-
-
