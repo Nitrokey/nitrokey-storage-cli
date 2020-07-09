@@ -21,8 +21,10 @@ tests: nkstorecli
 release: 
 	mkdir -p $(RELEASEDIR)
 	cp nkstorecli $(RELEASEDIR)/nkstorecli.upx
+	strip $(RELEASEDIR)/nkstorecli.upx
 	upx $(RELEASEDIR)/nkstorecli.upx
 	cp nkstorecli $(RELEASEDIR)/nkstorecli
+	strip $(RELEASEDIR)/nkstorecli
 	cp VERSION $(RELEASEDIR)
 
 	tar czf $(RELEASEDIR).tar.gz $(RELEASEDIR)

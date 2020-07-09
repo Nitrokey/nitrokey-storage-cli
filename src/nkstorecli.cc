@@ -11,12 +11,12 @@ using namespace std;
 void usage() {
 
 	cout << "Usage: " << endl;
-	cout << "  ./ucli --unlock-encrypted <user_pin>" << endl;
-	cout << "  ./ucli --change-admin-pin <old_admin_pin> <new_admin_pin>" << endl;
-	cout << "  ./ucli --encrypted-ro <admin_pin>" << endl;
-	cout << "  ./ucli --encrypted-rw <admin_pin>" << endl;
-	cout << "  ./ucli --unencrypted-ro <admin_pin>" << endl;
-	cout << "  ./ucli --unencrypted-rw <admin_pin>" << endl << endl;
+	cout << "  nkstorecli --unlock-encrypted <user_pin>" << endl;
+	cout << "  nkstorecli --change-admin-pin <old_admin_pin> <new_admin_pin>" << endl;
+	cout << "  nkstorecli --encrypted-ro <admin_pin>" << endl;
+	cout << "  nkstorecli --encrypted-rw <admin_pin>" << endl;
+	cout << "  nkstorecli --unencrypted-ro <admin_pin>" << endl;
+	cout << "  nkstorecli --unencrypted-rw <admin_pin>" << endl << endl;
 
 }
 
