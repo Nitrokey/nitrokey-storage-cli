@@ -5,6 +5,7 @@ wget https://github.com/libusb/libusb/releases/download/v1.0.23/libusb-1.0.23.ta
 tar xf libusb-1.0.23.tar.bz2
 cd libusb-1.0.23
 ./configure --prefix=/usr --disable-shared --disable-udev
+cat config.log
 make
 make install DESTDIR=`pwd`/foo
 
