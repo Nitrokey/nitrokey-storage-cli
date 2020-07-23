@@ -1,10 +1,9 @@
-CFLAGS=-I/usr/include -L/usr/lib
-CC=g++ $(CFLAGS)
+CFLAGS=-lstdc++ -shared-libgcc -lnitrokey -lhidapi-libusb -lusb-1.0
+CC=gcc -I/usr/include -L/usr/lib 
 DESTDIR=/usr
 
 all:
-	$(CC) -Os -c nkstorecli.cc -o nkstorecli.o 
-	$(CC) nkstorecli.o -lusb -lhidapi-libusb -lnitrokey  -o nkstorecli
+	$(CC) -Os nkstorecli.cc $(CFLAGS) -o nkstorecli
 
 install: all
 	$(STRIP) nkstorecli
