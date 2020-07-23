@@ -20,12 +20,8 @@ tests: nkstorecli
 
 release: 
 	mkdir -p $(RELEASEDIR)
-	cp nkstorecli $(RELEASEDIR)/nkstorecli.upx
-	strip $(RELEASEDIR)/nkstorecli.upx
-	upx $(RELEASEDIR)/nkstorecli.upx
-	cp nkstorecli $(RELEASEDIR)/nkstorecli
-	strip $(RELEASEDIR)/nkstorecli
 	cp VERSION $(RELEASEDIR)
+	cp -r src $(RELEASEDIR)/
 
 	tar czf $(RELEASEDIR).tar.gz $(RELEASEDIR)
 	sha256sum $(RELEASEDIR).tar.gz > $(RELEASEDIR).tar.gz.sha256

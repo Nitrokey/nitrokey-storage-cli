@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "libnitrokey/NK_C_API.h"
+#include <libnitrokey/NK_C_API.h>
 
 using namespace std;
 
@@ -46,9 +46,6 @@ int main(int argc, char* argv[])
                 break;
         case NK_STORAGE:
                 printf("a Nitrokey Storage");
-                break;
-        case NK_LIBREM:
-                printf("a Librem Key");
                 break;
         default:
                 printf("an unsupported Nitrokey");
