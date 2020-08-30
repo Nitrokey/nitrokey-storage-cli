@@ -11,6 +11,10 @@ install: all
 	$(STRIP) nkstorecli
 	cp nkstorecli $(DESTDIR)/bin
 
+local:
+	$(CC) -Os nkstorecli.cc -o nkstorecli -lnitrokey -lhidapi-libusb -lusb -lstdc++
+
+
 static:
 	$(CC) -Os -static nkstorecli.cc -Wl,-gc-sections -o nkstorecli $(INSTALL)/lib/libnitrokey-storage.a $(INSTALL)/lib/libhidapi-libusb.a $(INSTALL)/lib/libusb-1.0.a $(INSTALL)/../crossgcc/x86_64-linux-musl/lib64/libstdc++.a
 	#strip nkstorecli

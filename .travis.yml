@@ -9,4 +9,4 @@ services:
 
 # command to run tests
 script:
-  - make
+  - make -C src local
