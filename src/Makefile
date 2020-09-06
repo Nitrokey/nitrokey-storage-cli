@@ -16,6 +16,9 @@ local:
 
 
 static:
-	$(CC) -Os -static nkstorecli.cc -Wl,-gc-sections -o nkstorecli $(INSTALL)/lib/libnitrokey-storage.a $(INSTALL)/lib/libhidapi-libusb.a $(INSTALL)/lib/libusb-1.0.a $(INSTALL)/../crossgcc/x86_64-linux-musl/lib64/libstdc++.a
+	$(CC) -Os -static nkstorecli.cc -Wl,-gc-sections -o nkstorecli -I$(INSTALL)/../crossgcc/x86_64-linux-musl/include -L$(INSTALL)/lib -L$(INSTALL)/../crossgcc/x86_64-linux-musl/lib64 -lnitrokey-storage -lhidapi-libusb -lusb-1.0 -lstdc++ 
+	#     $(INSTALL)/lib/libnitrokey-storage.a $(INSTALL)/lib/libhidapi-libusb.a $(INSTALL)/../crossgcc/x86_64-linux-musl/lib64/libstdc++.a -lusb-1.0
+	#$(CC) -Os -static nkstorecli.cc -Wl,-gc-sections -o nkstorecli  $(INSTALL)/lib/libnitrokey-storage.a $(INSTALL)/lib/libhidapi-libusb.a $(INSTALL)/../crossgcc/x86_64-linux-musl/lib64/libstdc++.a -lusb-1.0
+	#$(CC) -Os -static nkstorecli.cc -Wl,-gc-sections -o nkstorecli $(INSTALL)/lib/libnitrokey-storage.a $(INSTALL)/lib/libhidapi-libusb.a $(INSTALL)/lib/libusb-1.0.a $(INSTALL)/../crossgcc/x86_64-linux-musl/lib64/libstdc++.a
 	#strip nkstorecli
 	#upx nkstorecli
