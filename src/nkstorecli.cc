@@ -1,15 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include <iostream>
 #include <string>
 
 #include <libnitrokey/NK_C_API.h>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::string;
+
 
 void usage() {
-
 	cout << "Usage: " << endl;
 	cout << "  nkstorecli --unlock-encrypted <user_pin>" << endl;
 	cout << "  nkstorecli --change-admin-pin <old_admin_pin> <new_admin_pin>" << endl;
@@ -17,8 +16,8 @@ void usage() {
 	cout << "  nkstorecli --encrypted-rw <admin_pin>" << endl;
 	cout << "  nkstorecli --unencrypted-ro <admin_pin>" << endl;
 	cout << "  nkstorecli --unencrypted-rw <admin_pin>" << endl << endl;
-
 }
+
 
 void handle_ret(const string& desc, int ret) {
 	if (ret == 0)
@@ -30,33 +29,33 @@ void handle_ret(const string& desc, int ret) {
 }
 
 
-
 int main(int argc, char* argv[])
 {
         if (NK_login_auto() != 1) {
-                fprintf(stderr, "No Nitrokey found.\n");
+                cout << "No Nitrokey found" << endl;
                 return 1;
         }
 
         NK_device_model model = NK_get_device_model();
-        printf("Connected to ");
+
+        cout << "Connected to ";
         switch (model) {
         case NK_PRO:
-                printf("a Nitrokey Pro");
+                cout << "a Nitrokey Pro";
                 break;
         case NK_STORAGE:
-                printf("a Nitrokey Storage");
+                cout << "a Nitrokey Storage";
                 break;
         default:
-                printf("an unsupported Nitrokey");
+                cout << "an unsupported Nitrokey";
                 break;
         }
 
         char* serial_number = NK_device_serial_number();
         if (serial_number)
-            printf(" with serial number %s\n", serial_number);
+            cout << " with serial number " << serial_number << endl;
         else
-            printf(" -- could not query serial number!\n");
+            cout << " -- could not query serial number!" << endl;
         free(serial_number);
 
 				
